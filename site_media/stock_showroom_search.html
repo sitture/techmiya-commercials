@@ -1,0 +1,36 @@
+ {% extends "base.html" %}
+ {% block title %}Zambia Showroom{% endblock %}
+ {% block pagetitle %}Zambia > <a href="/showroom">Showroom</a> {% endblock %}
+ {% block content %}
+ 
+ {% for a in vehs %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,169 @@
+ {% extends "base.html" %}
+ {% block title %}Contact Details{% endblock %}
+ {% block content %}
+	<div align="center">
+		<p><b>Locations:</b> {% if uk %}<a href="#uk">United Kingdom</a> |{% endif %}
+		{% if zambia %}<a href="#zambia">Zambia</a> |{% endif %}
+		{% if namibia %}<a href="#namibia">Namibia</a> |{% endif %}
+		{% if congo %}<a href="#congo">Congo</a> |{% endif %}
+		{% if burundi %}<a href="#burundi">Burundi</a> |{% endif %}
+		{% if botswana %}<a href="#botswana">Botswana</a> |{% endif %}
+		{% if tanzania %}<a href="#tanzania">Tanzania</a> {% endif %}
+		{% if malawi %}<a href="#malawi">Malawi</a> {% endif %}
+		</p>
+	</div>
+	
+	{% if uk %}
+		<div class="maketitle"><a name="uk">United Kingdom</a></div>
+		{% for a in uk %}
+			<p>
+				<b><font size="3">{{ a.title }}. {{ a.full_name}}</font></b><br />
+				{% if a.address %}<b>Address:</b> {{ a.address }}<br />{% endif %}
+				{% if a.city %}<b>City:</b> {{ a.city }}<br />{% endif %}
+				{% if a.postcode %}<b>Postcode:</b> {{ a.postcode }}<br />{% endif %}
+				{% if a.telephone %}<b>Phone:</b> {{ a.telephone }}<br />{% endif %}
+				{% if a.email %}<b>Email:</b> <font color="#FF5A00"><font color="#FF5A00"><i>{{ a.email }}</i></font></font><br />{% endif %}
+			</p>
+		{% endfor %}
+	<hr />{% endif %}
+	
+	
+	
+	{% if zambia %}
+		<div class="maketitle"><a name="zambia">Zambia</a></div>
+		{% for a in zambia %}
+			<p>
+				<b><font size="3">{{ a.title }}. {{ a.full_name}}</font></b><br />
+				{% if a.address %}<b>Address:</b> {{ a.address }}<br />{% endif %}
+				{% if a.city %}<b>City:</b> {{ a.city }}<br />{% endif %}
+				{% if a.postcode %}<b>Postcode:</b> {{ a.postcode }}<br />{% endif %}
+				{% if a.telephone %}<b>Phone:</b> {{ a.telephone }}<br />{% endif %}
+				{% if a.email %}<b>Email:</b> <font color="#FF5A00"><i>{{ a.email }}</i></font><br />{% endif %}
+			</p>
+		{% endfor %}
+	<hr />{% endif %}
+	
+	
+	
+	{% if namibia %}
+		<div class="maketitle"><a name="namibia">Namibia</a></div>
+		{% for a in namibia %}
+			<p>
+				<b><font size="3">{{ a.title }}. {{ a.full_name}}</font></b><br />
+				{% if a.address %}<b>Address:</b> {{ a.address }}<br />{% endif %}
+				{% if a.city %}<b>City:</b> {{ a.city }}<br />{% endif %}
+				{% if a.postcode %}<b>Postcode:</b> {{ a.postcode }}<br />{% endif %}
+				{% if a.telephone %}<b>Phone:</b> {{ a.telephone }}<br />{% endif %}
+				{% if a.email %}<b>Email:</b> <font color="#FF5A00"><i>{{ a.email }}</i></font><br />{% endif %}
+			</p>
+		{% endfor %}
+	<hr />{% endif %}
+	
+	
+	
+	{% if congo %}
+		<div class="maketitle"><a name="congo">Congo</a></div>
+		{% for a in congo %}
+			<p>
+				<b><font size="3">{{ a.title }}. {{ a.full_name}}</font></b><br />
+				{% if a.address %}<b>Address:</b> {{ a.address }}<br />{% endif %}
+				{% if a.city %}<b>City:</b> {{ a.city }}<br />{% endif %}
+				{% if a.postcode %}<b>Postcode:</b> {{ a.postcode }}<br />{% endif %}
+				{% if a.telephone %}<b>Phone:</b> {{ a.telephone }}<br />{% endif %}
+				{% if a.email %}<b>Email:</b> <font color="#FF5A00"><i>{{ a.email }}</i></font><br />{% endif %}
+			</p>
+		{% endfor %}
+	<hr />{% endif %}
+	
+	
+	
+	{% if burundi %}
+		<div class="maketitle"><a name="burundi">Burundi</a></div>
+		{% for a in burundi %}
+			<p>
+				<b><font size="3">{{ a.title }}. {{ a.full_name}}</font></b><br />
+				{% if a.address %}<b>Address:</b> {{ a.address }}<br />{% endif %}
+				{% if a.city %}<b>City:</b> {{ a.city }}<br />{% endif %}
+				{% if a.postcode %}<b>Postcode:</b> {{ a.postcode }}<br />{% endif %}
+				{% if a.telephone %}<b>Phone:</b> {{ a.telephone }}<br />{% endif %}
+				{% if a.email %}<b>Email:</b> <font color="#FF5A00"><i>{{ a.email }}</i></font><br />{% endif %}
+			</p>
+		{% endfor %}
+	<hr />{% endif %}
+	
+	
+	
+	{% if botswana %}
+		<div class="maketitle"><a name="botswana">Botswana</a></div>
+		{% for a in botswana %}
+			<p>
+				<b><font size="3">{{ a.title }}. {{ a.full_name}}</font></b><br />
+				{% if a.address %}<b>Address:</b> {{ a.address }}<br />{% endif %}
+				{% if a.city %}<b>City:</b> {{ a.city }}<br />{% endif %}
+				{% if a.postcode %}<b>Postcode:</b> {{ a.postcode }}<br />{% endif %}
+				{% if a.telephone %}<b>Phone:</b> {{ a.telephone }}<br />{% endif %}
+				{% if a.email %}<b>Email:</b> <font color="#FF5A00"><i>{{ a.email }}</i></font><br />{% endif %}
+			</p>
+		{% endfor %}
+	<hr />{% endif %}
+	
+	
+	
+	{% if tanzania %}
+		<div class="maketitle"><a name="tanzania">Tanzania</a></div>
+		{% for a in botswana %}
+			<p>
+				<b><font size="3">{{ a.title }}. {{ a.full_name}}</font></b><br />
+				{% if a.address %}<b>Address:</b> {{ a.address }}<br />{% endif %}
+				{% if a.city %}<b>City:</b> {{ a.city }}<br />{% endif %}
+				{% if a.postcode %}<b>Postcode:</b> {{ a.postcode }}<br />{% endif %}
+				{% if a.telephone %}<b>Phone:</b> {{ a.telephone }}<br />{% endif %}
+				{% if a.email %}<b>Email:</b> <font color="#FF5A00"><i>{{ a.email }}</i></font><br />{% endif %}
+			</p>
+		{% endfor %}}
+	{% endif %}
+	
+	{% if malawi %}
+		<div class="maketitle"><a name="malawi">Malawi</a></div>
+		{% for a in malawi %}
+			<p>
+				<b><font size="3">{{ a.title }}. {{ a.full_name}}</font></b><br />
+				{% if a.address %}<b>Address:</b> {{ a.address }}<br />{% endif %}
+				{% if a.city %}<b>City:</b> {{ a.city }}<br />{% endif %}
+				{% if a.postcode %}<b>Postcode:</b> {{ a.postcode }}<br />{% endif %}
+				{% if a.telephone %}<b>Phone:</b> {{ a.telephone }}<br />{% endif %}
+				{% if a.email %}<b>Email:</b> <font color="#FF5A00"><i>{{ a.email }}</i></font><br />{% endif %}
+			</p>
+		{% endfor %}}
+	{% endif %}
+	
+	
+	
+		  <!--<div align="center"><table width="750">
+				<tr>
+					<td width="50%">
+						<div class="maketitle"><font size="4">Contact Details</font></div>
+						<p>
+							<font size="3"><b>United Kingdom</b></font><br>
+							Mr. Henry Kapota Miyambo<br>
+							54 Uplan D Grove<br>
+							Leeds<br>
+							LS8 2SY<br>
+							<b>Mobile:</b> 07529534629<br>
+							<b>Email:</b> henry@techmiyacommercials.com
+						</p>
+					</td>
+					<td>
+						<p>
+							<font size="3"><b>Zambia</b></font><br>
+							Mr. James Kalebaila<br>
+							Mansa <br>
+							<b>Mobile:</b> 0977867380<br>
+							<b>Email:</b> james@techmiyacommercials.com
+						</p>
+					</td>
+				</tr>
+			</table></div>-->
+ 
+ 
+ {% endblock %}

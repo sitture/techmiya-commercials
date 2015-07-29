@@ -1,0 +1,1546 @@
+ {% extends "base.html" %}
+ {% block title %}Stock > Trucks{% endblock %}
+ {% block pagetitle %}<a href="/stock">Stock</a> > <a href="/trailers">Trailers</a>{% endblock %}
+ {% block content %}
+
+ {% if blank_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+		{% for a in blank_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+ 
+ 
+ 
+			<! -- ACURA -->
+
+	{% if acura_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="acura">Acura</a></div>
+
+		{% for a in acura_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if alfa_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+		<div class="maketitle"><a name="alfa">Alfa</a></div>
+
+		{% for a in alfa_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+
+
+	{% if aston_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="aston">Aston</a></div>
+
+		{% for a in aston_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if audi_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="audi">Audi</a></div>
+
+		{% for a in audi_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if bmw_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="bmw">BMW</a></div>
+
+		{% for a in bmw_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+
+	{% if daf_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="daf">Leyland DAF</a></div>
+
+		{% for a in daf_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if erf_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+
+	
+		<div class="maketitle"><a name="erf">ERF</a></div>
+
+		{% for a in erf_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if fiat_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="fiat">Fiat</a></div>
+
+		{% for a in fiat_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+
+
+	{% if foden_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="foden">Foden</a></div>
+
+		{% for a in foden_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if ford_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="ford">Ford</a></div>
+
+		{% for a in ford_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	
+	{% if golf_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="golf">Golf</a></div>
+
+		{% for a in golf_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+
+
+	{% if honda_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="honda">Honda</a></div>
+
+		{% for a in honda_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if hyundai_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="hyundai">Hyundai</a></div>
+
+		{% for a in hyundai_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if iveco_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="iveco">Iveco</a></div>
+
+		{% for a in iveco_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+	{% if mazda_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+	
+		<div class="maketitle"><a name="mazda">Mazda</a></div>
+
+		{% for a in mazda_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+	{% if merc_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="mercedes">Mercedes Benz</a></div>
+
+		{% for a in merc_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+	
+	{% if mitsubishi_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="mitsubishi">MITSUBISHI</a></div>
+
+		{% for a in mitsubishi_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+	
+	{% if nissan_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="nissan">Nissan</a></div>
+
+		{% for a in nissan_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+
+	{% if renault_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="renault">Renault</a></div>
+
+		{% for a in renault_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+	{% if scania_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="scania">Scania</a></div>
+
+		{% for a in scania_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+	
+		{% if toyota_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="toyota">Toyota</a></div>
+
+		{% for a in toyota_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+	
+		{% if volvo_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="volvo">Volvo</a></div>
+
+		{% for a in volvo_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+	
+		{% if unknown_trailers %}
+
+<p><b>Makes:</b> {% if acura_trailers %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_trailers %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_trailers %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_trailers %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_trailers %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_trailers %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_trailers %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_trailers %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_trailers %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_trailers %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_trailers %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_trailers %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_trailers %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_trailers %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_trailers %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_trailers %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_trailers %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_trailers %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_trailers %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_trailers %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_trailers %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_trailers %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="unknown">Unknown</a></div>
+
+		{% for a in unknown_trailers %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+  {% endblock %}
+

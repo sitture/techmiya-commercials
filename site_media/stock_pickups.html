@@ -1,0 +1,1548 @@
+ {% extends "base.html" %}
+ {% block title %}Stock > 4 x 4 Pickups{% endblock %}
+ {% block pagetitle %}<a href="/stock">Stock</a> > <a href="/pickups">4 x 4 Pickups</a> {% endblock %}
+ {% block content %}
+
+			<! -- ACURA -->
+
+{% if blank_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+		{% for a in blank_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+ 
+ 
+ 
+			<! -- ACURA -->
+
+	{% if acura_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="acura">Acura</a></div>
+
+		{% for a in acura_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if alfa_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+		<div class="maketitle"><a name="alfa">Alfa</a></div>
+
+		{% for a in alfa_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+
+
+	{% if aston_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="aston">Aston</a></div>
+
+		{% for a in aston_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if audi_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="audi">Audi</a></div>
+
+		{% for a in audi_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if bmw_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="bmw">BMW</a></div>
+
+		{% for a in bmw_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+
+	{% if daf_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="daf">Leyland DAF</a></div>
+
+		{% for a in daf_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if erf_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+
+	
+		<div class="maketitle"><a name="erf">ERF</a></div>
+
+		{% for a in erf_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if fiat_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="fiat">Fiat</a></div>
+
+		{% for a in fiat_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+
+
+	{% if foden_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="foden">Foden</a></div>
+
+		{% for a in foden_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if ford_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="ford">Ford</a></div>
+
+		{% for a in ford_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	
+	{% if golf_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="golf">Golf</a></div>
+
+		{% for a in golf_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+
+
+	{% if honda_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="honda">Honda</a></div>
+
+		{% for a in honda_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if hyundai_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="hyundai">Hyundai</a></div>
+
+		{% for a in hyundai_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+	{% if iveco_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="iveco">Iveco</a></div>
+
+		{% for a in iveco_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+	{% if mazda_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+	
+		<div class="maketitle"><a name="mazda">Mazda</a></div>
+
+		{% for a in mazda_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+	{% if merc_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="mercedes">Mercedes Benz</a></div>
+
+		{% for a in merc_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+	
+	{% if mitsubishi_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="mitsubishi">MITSUBISHI</a></div>
+
+		{% for a in mitsubishi_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+	
+	{% if nissan_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="nissan">Nissan</a></div>
+
+		{% for a in nissan_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+
+	{% if renault_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="renault">Renault</a></div>
+
+		{% for a in renault_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+	{% if scania_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="scania">Scania</a></div>
+
+		{% for a in scania_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+	
+		{% if toyota_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="toyota">Toyota</a></div>
+
+		{% for a in toyota_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+	
+		{% if volvo_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="volvo">Volvo</a></div>
+
+		{% for a in volvo_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+	
+	
+		{% if unknown_pickups %}
+
+<p><b>Makes:</b> {% if acura_pickups %}<a href="#acura">ACURA</a> |{% endif %}
+		{% if alfa_pickups %}<a href="#alfa">ALFA</a> |{% endif %}
+		{% if aston_pickups %}<a href="#aston">ASTON</a> |{% endif %}
+		{% if audi_pickups %}<a href="#audi">AUDI</a> |{% endif %}
+		{% if bmw_pickups %}<a href="#bmw">BMW</a> |{% endif %}
+		{% if daf_pickups %}<a href="#daf">Leyland DAF</a> |{% endif %}
+		{% if erf_pickups %}<a href="#erf">ERF</a> |{% endif %}
+		{% if fiat_pickups %}<a href="#fiat">FIAT</a> |{% endif %}
+		{% if foden_pickups %}<a href="#foden">Foden</a> |{% endif %}
+		{% if ford_pickups %}<a href="#ford">FORD</a> |{% endif %}
+		{% if golf_pickups %}<a href="#golf">GOLF</a> |{% endif %}
+		{% if honda_pickups %}<a href="#honda">HONDA</a> |{% endif %}
+		{% if hyundai_pickups %}<a href="#hyundai">Hyundai</a> |{% endif %}
+		{% if iveco_pickups %}<a href="#iveco">IVECO</a> |{% endif %}
+		{% if mazda_pickups %}<a href="#mazda">MAZDA</a> |{% endif %}
+		{% if merc_pickups %}<a href="#mercedes">MERCEDES-BENZ</a> |{% endif %}
+		{% if mitsubishi_pickups %}<a href="#mitsubishi">MITSUBISHI</a> |{% endif %}
+		{% if nissan_pickups %}<a href="#nissan">NISSAN</a> |{% endif %}
+		{% if renault_pickups %}<a href="#renault">RENAULT</a> |{% endif %}
+		{% if scania_pickups %}<a href="#scania">SCANIA</a> |{% endif %}
+		{% if toyota_pickups %}<a href="#toyota">TOYOTA</a> |{% endif %}
+		{% if volvo_pickups %}<a href="#volvo">VOLVO </a>{% endif %}
+			
+</p>
+
+	
+		<div class="maketitle"><a name="unknown">Unknown</a></div>
+
+		{% for a in unknown_pickups %}
+		<table width="100%">
+			<tr class="{% cycle 'row1' 'row2' %}">
+				<td width="150" align="center" valign="center">
+					<img src="/site_media/{{ a.image }}" width="120" height="110"  vspace="10" border="1"/>
+				</td>
+				
+				<td valign="top" align="left">
+					<table width="100%">
+						<tr>
+							<td width="85%" valign="top" align="left">
+								<b>Model:</b> <a href="/vehicle/{{a.pk}}" class="modeltitle">{{ a.year }} {{ a.make }} {{ a.model }}</a>{% ifequal a.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal a.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}<br /><p><b>Description:</b> {{ a.desc }}</p>
+							</td>
+							<td width="15%" valign="top" align="right">
+								<p align="right">Ref: {{ a.ref }}</p>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<p align="right"><a href="/vehicle/{{a.pk}}">Click here for More Details and Images</a></p>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>						
+				</td>
+				
+			</tr>	
+		</table>		
+		{% endfor %}<br />
+	
+	{% endif %}
+
+
+  {% endblock %}
+

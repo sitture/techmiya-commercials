@@ -1,0 +1,98 @@
+﻿ {% extends "base.html" %}
+ {% block title %}Stock > Vehicle Detail{% endblock %}
+ {% block headJava %}
+	<script>
+			function changeImage(filename)
+			{	
+   				document.mainimage.src = filename;
+			}
+		</script>
+ {% endblock %}
+ {% block pagetitle %}<a href="/stock">Stock</a> > {{ v.type }} {% endblock %}
+ {% block content %}
+ 
+ 
+<table width="100%">
+	<tr>
+		<td>
+			<p class="modelMaketitle">{{ v.year }} {{ v.make }} {{ v.model }}</a>{% ifequal v.status "A" %} | <font color=green><i>Available</i></font>{% endifequal %}{% ifequal v.status "S" %} | <font color=red><b>SOLD</b></font>{% endifequal %}</p>
+			<hr />
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<p><br />
+				{% ifnotequal v.make "" %}<b>Make:</b> {{ v.make }}<br />{% endifnotequal %}
+				<b>Model:</b> {{ v.model }}<br />
+				<b>Year:</b> {{ v.year }}<br />
+				<b>Type:</b> {{ v.type }}<br />
+				<b>Description:</b> {{ v.desc }}
+				{% if email_list %}<br /><b>Contact:</b> <font color="#FF5A00">{% for a in email_list %}<i>{{ a.email }}</i>{% endfor%}</font>{% endif%}<br />
+			</p>
+			<hr />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="maketitle">Images</div>
+			
+			<table width="100%">
+				<tr>
+					<td valign="top" width="200px">
+						<div align="center">
+							<a href="javascript:changeImage('/site_media/{{ v.image }}')" ><img src="/site_media/{{ v.image }}" width="190" height="120"  border="0"/></a><br />
+							{% for item in pics %}
+								<a href="javascript:changeImage('/site_media/{{ item.image }}')" ><img src="/site_media/{{ item.image }}" width="190" height="120"  border="0"/></a><br />
+							{% endfor %}
+						</div>
+					</td>
+					<td valign="top" width="610px">				
+						<div align="center">
+							<img name="mainimage" src="/site_media/{{ v.image }}" width="600" height="400" border="0"><br/>
+						</div>
+					</td>
+				</tr>
+			</table>
+			
+			
+		</td>
+	</tr>
+	<!--<tr>
+		<td valign="top" align="center">
+			<table width="750">
+				<tr>
+					<td width="50%">
+						<div class="maketitle"><font size="4">Contact Details</font></div>
+						<p>
+							<font size="3"><b>United Kingdom</b></font><br>
+							Mr. Henry Kapota Miyambo<br>
+							54 Uplan D Grove<br>
+							Leeds<br>
+							LS8 2SY<br>
+							<b>Mobile:</b> 07529534629<br>
+							<b>Email:</b> henry@techmiyacommercials.com
+						</p>
+					</td>
+					<td>
+						<p>
+							<font size="3"><b>Zambia</b></font><br>
+							Mr. James Kalebaila<br>
+							Mansa <br>
+							<b>Mobile:</b> 0977867380<br>
+							<b>Email:</b> james@techmiyacommercials.com
+						</p>
+					</td>
+				</tr>
+			</table>-->
+	
+</table>
+
+
+
+
+
+
+
+
+{% endblock %}
