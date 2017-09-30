@@ -14,7 +14,7 @@ Follow this guide to setup this project on your local machine.
 
     ```shell
     cd website
-    virtualenv -p python venv # create virtual env
+    virtualenv venv # create virtual env
     source venv/bin/activate  # run this command everytime before starting on the project
     pip install -r requirements/dev.txt
     ```
