@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from myproject.techmiya.views import *
+from techmiya.techmiya.views import *
 import os
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
