@@ -13,7 +13,7 @@ Follow this guide to setup this project on your local machine.
 3. Create a python virtual environment and install python and django related dependencies.
 
     ```shell
-    cd website
+    cd techmiya-commercials
     virtualenv venv # create virtual env
     source venv/bin/activate  # run this command everytime before starting on the project
     pip install -r requirements/dev.txt
