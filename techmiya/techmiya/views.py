@@ -7,7 +7,7 @@ from django.template import RequestContext, Context, loader
 from django.shortcuts import render_to_response
 #from babylon.forms import *
 
-from techmiya.techmiya.models import *
+from .models import *
 
 from django import forms
 from django.forms.widgets import *
