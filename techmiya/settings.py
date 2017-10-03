@@ -1,7 +1,11 @@
 # Django settings for techmiya_base project.
+import os
 
-DEBUG = False
-TEMPLATE_DEBUG = DEBUG
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+TEMPLATE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+DEBUG = True
 
 ADMINS = (
      ('admin', 'admin@techmiyacommercials.co.uk'),
@@ -11,7 +15,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'techmiya',                      # Or path to database file if using sqlite3.
         'USER': 'techmiya',                      # Not used with sqlite3.
         'PASSWORD': 'techmiya',                  # Not used with sqlite3.
@@ -74,14 +78,28 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'myproject.urls'
+ROOT_URLCONF = 'urls'
 
-TEMPLATE_DIRS = (
+TEMPLATE_DIRS = [
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/techmiya/webapps/site_media/'
-)
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['/home/techmiya/webapps/site_media/',],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'debug': DEBUG,
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+    
+]
 
 INSTALLED_APPS = (
 	'django.contrib.auth',
@@ -91,5 +109,5 @@ INSTALLED_APPS = (
 	'django.contrib.messages',
 	# Uncomment the next line to enable the admin:
 	'django.contrib.admin',
-	'techmiya.techmiya',
+	'techmiya',
 )
