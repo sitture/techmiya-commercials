@@ -1020,14 +1020,14 @@ Lightbox.prototype = {
 };
 Spica.Event.run(function() { 
 	var lightbox = new Lightbox({
-		loadingimg:'/site_media/resources/loading.gif',
-		expandimg:'/site_media/resources/expand.gif',
-		shrinkimg:'/site_media/resources/shrink.gif',
-		blankimg:'/site_media/resources/blank.gif',
-		previmg:'/site_media/resources/prev.gif',
-		nextimg:'/site_media/resources/next.gif',
-		closeimg:'/site_media/resources/close.gif',
-		effectimg:'/site_media/resources/zzoop.gif',
+		loadingimg:'/static/resources/loading.gif',
+		expandimg:'/static/resources/expand.gif',
+		shrinkimg:'/static/resources/shrink.gif',
+		blankimg:'/static/resources/blank.gif',
+		previmg:'/static/resources/prev.gif',
+		nextimg:'/static/resources/next.gif',
+		closeimg:'/static/resources/close.gif',
+		effectimg:'/static/resources/zzoop.gif',
 		effectpos:{x:-40,y:-20},
 		effectclass:'effectable',
 		resizable:true,

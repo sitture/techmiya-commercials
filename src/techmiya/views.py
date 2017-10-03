@@ -18,7 +18,7 @@ from django.views.decorators.csrf import csrf_exempt
 # ---------------------------------------------------------------------------------------------------#
 
 def home_page(request):
-    return render_to_response('main_page.html', RequestContext(request))
+    return render_to_response('main_page.html', locals(), RequestContext(request))
 
 def google(request):
 	return render_to_response('googleee-db8bd5bbd4254.html', RequestContext(request))
@@ -59,7 +59,7 @@ def stock_trucks(request):
 	foden_trucks_list = list(Vehicle.objects.filter(type="TRUCK", showroom="N", make="Foden"))
 	scania_trucks_list = list(Vehicle.objects.filter(type="TRUCK", showroom="N", make="SCANIA"))
 	renault_trucks_list = list(Vehicle.objects.filter(type="TRUCK", showroom="N", make="RENAULT"))
-	
+
 	acura_trucks_list = list(Vehicle.objects.filter(type="TRUCK", showroom="N", make="ACURA"))
 	golf_trucks_list = list(Vehicle.objects.filter(type="TRUCK", showroom="N", make="GOLF"))
 	alfa_trucks_list = list(Vehicle.objects.filter(type="TRUCK", showroom="N", make="ALFA"))
@@ -75,23 +75,23 @@ def stock_trucks(request):
 	toyota_trucks_list = list(Vehicle.objects.filter(type="TRUCK", showroom="N", make="TOYOTA"))
 	mitsubishi_trucks_list = list(Vehicle.objects.filter(type="TRUCK", showroom="N", make="MITSUBISHI"))
 	unknown_trucks_list = list(Vehicle.objects.filter(type="TRUCK", showroom="N", make="Unknown"))
-	
-	
+
+
 	variables = RequestContext(request, {
 								'mitsubishi_trucks' : mitsubishi_trucks_list,
 								'blank_trucks' : blank_trucks_list,
-								'daf_trucks' : daf_trucks_list, 
-								'erf_trucks' : erf_trucks_list, 
-								'iveco_trucks' : iveco_trucks_list, 
-								'merc_trucks' : merc_trucks_list, 
-								'merc_trucks' : merc_trucks_list, 
-								'scania_trucks' : scania_trucks_list, 
-								'volvo_trucks' : volvo_trucks_list, 
-								'nissan_trucks' : nissan_trucks_list, 
-								'golf_trucks' : golf_trucks_list, 
-								'renault_trucks' : renault_trucks_list, 
+								'daf_trucks' : daf_trucks_list,
+								'erf_trucks' : erf_trucks_list,
+								'iveco_trucks' : iveco_trucks_list,
+								'merc_trucks' : merc_trucks_list,
+								'merc_trucks' : merc_trucks_list,
+								'scania_trucks' : scania_trucks_list,
+								'volvo_trucks' : volvo_trucks_list,
+								'nissan_trucks' : nissan_trucks_list,
+								'golf_trucks' : golf_trucks_list,
+								'renault_trucks' : renault_trucks_list,
 								'foden_trucks' : foden_trucks_list,
-								
+
 								'acura_trucks' : acura_trucks_list,
 								'alfa_trucks' : alfa_trucks_list,
 								'aston_trucks' : aston_trucks_list,
@@ -106,7 +106,7 @@ def stock_trucks(request):
 								'unknown_trucks' : unknown_trucks_list
 							}
 						)
-	return render_to_response('stock_trucks.html', variables)
+	return render_to_response('stock_trucks.html', locals(), variables)
 
 # ---------------------------------------------------------------------------------------------------#
 # ---------------------------------------------------------------------------------------------------#
@@ -121,7 +121,7 @@ def stock_pickups(request):
 	foden_pickups_list = list(Vehicle.objects.filter(type="4 X 4 PICKUP", showroom="N", make="Foden"))
 	scania_pickups_list = list(Vehicle.objects.filter(type="4 X 4 PICKUP", showroom="N", make="SCANIA"))
 	renault_pickups_list = list(Vehicle.objects.filter(type="4 X 4 PICKUP", showroom="N", make="RENAULT"))
-	
+
 	acura_pickups_list = list(Vehicle.objects.filter(type="4 X 4 PICKUP", showroom="N", make="ACURA"))
 	alfa_pickups_list = list(Vehicle.objects.filter(type="4 X 4 PICKUP", showroom="N", make="ALFA"))
 	aston_pickups_list = list(Vehicle.objects.filter(type="4 X 4 PICKUP", showroom="N", make="ASTON"))
@@ -137,23 +137,23 @@ def stock_pickups(request):
 	nissan_pickups_list = list(Vehicle.objects.filter(type="4 X 4 PICKUP", showroom="N", make="NISSAN"))
 	mitsubishi_pickups_list = list(Vehicle.objects.filter(type="4 X 4 PICKUP", showroom="N", make="MITSUBISHI"))
 	golf_pickups_list = list(Vehicle.objects.filter(type="4 X 4 PICKUP", showroom="N", make="GOLF"))
-	
-	
+
+
 	variables = RequestContext(request, {
 								'blank_pickups' : blank_pickups_list,
 								'mitsubishi_pickups' : mitsubishi_pickups_list,
-								'daf_pickups' : daf_pickups_list, 
-								'erf_pickups' : erf_pickups_list, 
-								'iveco_pickups' : iveco_pickups_list, 
-								'merc_pickups' : merc_pickups_list, 
-								'merc_pickups' : merc_pickups_list, 
-								'scania_pickups' : scania_pickups_list, 
-								'volvo_pickups' : volvo_pickups_list, 
-								'renault_pickups' : renault_pickups_list, 
+								'daf_pickups' : daf_pickups_list,
+								'erf_pickups' : erf_pickups_list,
+								'iveco_pickups' : iveco_pickups_list,
+								'merc_pickups' : merc_pickups_list,
+								'merc_pickups' : merc_pickups_list,
+								'scania_pickups' : scania_pickups_list,
+								'volvo_pickups' : volvo_pickups_list,
+								'renault_pickups' : renault_pickups_list,
 								'foden_pickups' : foden_pickups_list,
 								'nissan_pickups' : nissan_pickups_list,
 								'golf_pickups' : golf_pickups_list,
-								
+
 								'acura_pickups' : acura_pickups_list,
 								'alfa_pickups' : alfa_pickups_list,
 								'aston_pickups' : aston_pickups_list,
@@ -168,7 +168,7 @@ def stock_pickups(request):
 								'unknown_pickups' : unknown_pickups_list
 							}
 						)
-	return render_to_response('stock_pickups.html', variables)
+	return render_to_response('stock_pickups.html', locals(), variables)
 
 # ---------------------------------------------------------------------------------------------------#
 # ---------------------------------------------------------------------------------------------------#
@@ -185,7 +185,7 @@ def stock_cars(request):
 	renault_cars_list = list(Vehicle.objects.filter(type="CAR", showroom="N", make="RENAULT"))
 	nissan_cars_list = list(Vehicle.objects.filter(type="CAR", showroom="N", make="NISSAN"))
 	golf_cars_list = list(Vehicle.objects.filter(type="CAR", showroom="N", make="GOLF"))
-	
+
 	acura_cars_list = list(Vehicle.objects.filter(type="CAR", showroom="N", make="ACURA"))
 	alfa_cars_list = list(Vehicle.objects.filter(type="CAR", showroom="N", make="ALFA"))
 	aston_cars_list = list(Vehicle.objects.filter(type="CAR", showroom="N", make="ASTON"))
@@ -199,23 +199,23 @@ def stock_cars(request):
 	toyota_cars_list = list(Vehicle.objects.filter(type="CAR", showroom="N", make="TOYOTA"))
 	unknown_cars_list = list(Vehicle.objects.filter(type="CAR", showroom="N", make="Unknown"))
 	mitsubishi_cars_list = list(Vehicle.objects.filter(type="CAR", showroom="N", make="MITSUBISHI"))
-	
-	
+
+
 	variables = RequestContext(request, {
 								'blank_cars' : blank_cars_list,
-								'mitsubishi_cars' : mitsubishi_cars_list, 
-								'daf_cars' : daf_cars_list, 
-								'erf_cars' : erf_cars_list, 
-								'iveco_cars' : iveco_cars_list, 
-								'merc_cars' : merc_cars_list, 
-								'merc_cars' : merc_cars_list, 
-								'scania_cars' : scania_cars_list, 
-								'volvo_cars' : volvo_cars_list, 
-								'renault_cars' : renault_cars_list, 
+								'mitsubishi_cars' : mitsubishi_cars_list,
+								'daf_cars' : daf_cars_list,
+								'erf_cars' : erf_cars_list,
+								'iveco_cars' : iveco_cars_list,
+								'merc_cars' : merc_cars_list,
+								'merc_cars' : merc_cars_list,
+								'scania_cars' : scania_cars_list,
+								'volvo_cars' : volvo_cars_list,
+								'renault_cars' : renault_cars_list,
 								'foden_cars' : foden_cars_list,
 								'nissan_cars' : nissan_cars_list,
 								'golf_cars' : golf_cars_list,
-								
+
 								'acura_cars' : acura_cars_list,
 								'alfa_cars' : alfa_cars_list,
 								'aston_cars' : aston_cars_list,
@@ -230,7 +230,7 @@ def stock_cars(request):
 								'unknown_cars' : unknown_cars_list
 							}
 						)
-	return render_to_response('stock_cars.html', variables)
+	return render_to_response('stock_cars.html', locals(), variables)
 
 # ---------------------------------------------------------------------------------------------------#
 # ---------------------------------------------------------------------------------------------------#
@@ -238,20 +238,20 @@ def stock_showroomAll(request):
     veh_list = list(Vehicle.objects.filter(showroom="Y"))
     #if not props_list:
         #raise Http404
-    return render_to_response('stock_showroomAll.html', {'vehs': veh_list})
+    return render_to_response('stock_showroomAll.html', locals(), {'vehs': veh_list})
 
 def stock_showroom_search(request):
-	
+
 	if request.method == "POST":
 		#veh_make = request.POST['make']
 		veh_type = request.POST['type']
-		
+
 	if veh_type == "0":
 		veh_list = list(Vehicle.objects.filter(showroom="Y"))
 	else:
 		veh_list = list(Vehicle.objects.filter(showroom="Y", type=veh_type))
 
-	return render_to_response('stock_showroomAll.html', {"vehs": veh_list}, context_instance=RequestContext(request))
+	return render_to_response('stock_showroomAll.html', locals(), context_instance=RequestContext(request, {"vehs": veh_list}))
 
 def stock_showroom(request):
 	blank_showroom_list = list(Vehicle.objects.filter(showroom="N", make=""))
@@ -265,7 +265,7 @@ def stock_showroom(request):
 	renault_showroom_list = list(Vehicle.objects.filter(showroom="N", make="RENAULT"))
 	nissan_showroom_list = list(Vehicle.objects.filter(showroom="N", make="NISSAN"))
 	golf_showroom_list = list(Vehicle.objects.filter(showroom="N", make="GOLF"))
-	
+
 	acura_showroom_list = list(Vehicle.objects.filter(showroom="N", make="ACURA"))
 	alfa_showroom_list = list(Vehicle.objects.filter(showroom="N", make="ALFA"))
 	aston_showroom_list = list(Vehicle.objects.filter(showroom="N", make="ASTON"))
@@ -279,23 +279,23 @@ def stock_showroom(request):
 	toyota_showroom_list = list(Vehicle.objects.filter(showroom="N", make="TOYOTA"))
 	unknown_showroom_list = list(Vehicle.objects.filter(showroom="N", make="Unknown"))
 	mitsubishi_showroom_list = list(Vehicle.objects.filter(showroom="N", make="MITSUBISHI"))
-	
-	
+
+
 	variables = RequestContext(request, {
 								'blank_showroom' : blank_showroom_list,
-								'mitsubishi_showroom' : mitsubishi_showroom_list, 
-								'daf_showroom' : daf_showroom_list, 
-								'erf_showroom' : erf_showroom_list, 
-								'iveco_showroom' : iveco_showroom_list, 
-								'merc_showroom' : merc_showroom_list, 
-								'merc_showroom' : merc_showroom_list, 
-								'scania_showroom' : scania_showroom_list, 
-								'volvo_showroom' : volvo_showroom_list, 
-								'renault_showroom' : renault_showroom_list, 
+								'mitsubishi_showroom' : mitsubishi_showroom_list,
+								'daf_showroom' : daf_showroom_list,
+								'erf_showroom' : erf_showroom_list,
+								'iveco_showroom' : iveco_showroom_list,
+								'merc_showroom' : merc_showroom_list,
+								'merc_showroom' : merc_showroom_list,
+								'scania_showroom' : scania_showroom_list,
+								'volvo_showroom' : volvo_showroom_list,
+								'renault_showroom' : renault_showroom_list,
 								'foden_showroom' : foden_showroom_list,
 								'nissan_showroom' : nissan_showroom_list,
 								'golf_showroom' : golf_showroom_list,
-								
+
 								'acura_showroom' : acura_showroom_list,
 								'alfa_showroom' : alfa_showroom_list,
 								'aston_showroom' : aston_showroom_list,
@@ -310,7 +310,7 @@ def stock_showroom(request):
 								'unknown_showroom' : unknown_showroom_list
 							}
 						)
-	return render_to_response('stock_showroom.html', variables)
+	return render_to_response('stock_showroom.html', locals(), variables)
 
 # ---------------------------------------------------------------------------------------------------#
 # ---------------------------------------------------------------------------------------------------#
@@ -323,8 +323,8 @@ def detail(request, vehicle_id):
 	email_list = list(ContactDetail.objects.filter(location='United Kingdom', email='henry@techmiyacommercials.co.uk'))
     except Vehicle.DoesNotExist:
         raise Http404
-    return render_to_response('vehicle_info.html', {'v' : v, 'pics' : pics_list, 'email_list' : email_list})
-	
+    return render_to_response('vehicle_info.html', locals(), {'v' : v, 'pics' : pics_list, 'email_list' : email_list})
+
 # ---------------------------------------------------------------------------------------------------#
 # ---------------------------------------------------------------------------------------------------#
 
@@ -337,10 +337,10 @@ def contacts(request):
 	botswana_contacts_list = list(ContactDetail.objects.filter(location = "Botswana"))
 	tanzania_contacts_list = list(ContactDetail.objects.filter(location = "Tanzania"))
 	malawi_contacts_list = list(ContactDetail.objects.filter(location = "Malawi"))
-	
+
 	variables = RequestContext(request, {
-								'uk' : uk_contacts_list, 
-								'zambia' : zambia_contacts_list, 
+								'uk' : uk_contacts_list,
+								'zambia' : zambia_contacts_list,
 								'namibia' : namibia_contacts_list,
 								'congo' : congo_contacts_list,
 								'burundi' : burundi_contacts_list,
@@ -349,10 +349,10 @@ def contacts(request):
 								'malawi' : malawi_contacts_list
 									}
 								)
-	
-	return render_to_response('contacts.html', variables)
 
-	
+	return render_to_response('contacts.html', locals(), variables)
+
+
 def stock_trailers(request):
 	blank_trailers_list = list(Vehicle.objects.filter(type="TRAILER", showroom="N", make=""))
 	daf_trailers_list = list(Vehicle.objects.filter(type="TRAILER", showroom="N", make="Leyland DAF"))
@@ -363,7 +363,7 @@ def stock_trailers(request):
 	foden_trailers_list = list(Vehicle.objects.filter(type="TRAILER", showroom="N", make="Foden"))
 	scania_trailers_list = list(Vehicle.objects.filter(type="TRAILER", showroom="N", make="SCANIA"))
 	renault_trailers_list = list(Vehicle.objects.filter(type="TRAILER", showroom="N", make="RENAULT"))
-	
+
 	acura_trailers_list = list(Vehicle.objects.filter(type="TRAILER", showroom="N", make="ACURA"))
 	alfa_trailers_list = list(Vehicle.objects.filter(type="TRAILER", showroom="N", make="ALFA"))
 	aston_trailers_list = list(Vehicle.objects.filter(type="TRAILER", showroom="N", make="ASTON"))
@@ -379,23 +379,23 @@ def stock_trailers(request):
 	nissan_trailers_list = list(Vehicle.objects.filter(type="TRAILER", showroom="N", make="NISSAN"))
 	golf_trailers_list = list(Vehicle.objects.filter(type="TRAILER", showroom="N", make="GOLF"))
 	mitsubishi_trailers_list = list(Vehicle.objects.filter(type="TRAILER", showroom="N", make="MITSUBISHI"))
-	
-	
+
+
 	variables = RequestContext(request, {
 								'blank_trailers' : blank_trailers_list,
 								'mitsubishi_trailers' : mitsubishi_trailers_list,
-								'daf_trailers' : daf_trailers_list, 
-								'erf_trailers' : erf_trailers_list, 
-								'iveco_trailers' : iveco_trailers_list, 
-								'merc_trailers' : merc_trailers_list, 
-								'merc_trailers' : merc_trailers_list, 
-								'scania_trailers' : scania_trailers_list, 
-								'volvo_trailers' : volvo_trailers_list, 
-								'renault_trailers' : renault_trailers_list, 
+								'daf_trailers' : daf_trailers_list,
+								'erf_trailers' : erf_trailers_list,
+								'iveco_trailers' : iveco_trailers_list,
+								'merc_trailers' : merc_trailers_list,
+								'merc_trailers' : merc_trailers_list,
+								'scania_trailers' : scania_trailers_list,
+								'volvo_trailers' : volvo_trailers_list,
+								'renault_trailers' : renault_trailers_list,
 								'foden_trailers' : foden_trailers_list,
 								'nissan_trailers' : nissan_trailers_list,
 								'golf_trailers' : golf_trailers_list,
-								
+
 								'acura_trailers' : acura_trailers_list,
 								'alfa_trailers' : alfa_trailers_list,
 								'aston_trailers' : aston_trailers_list,
@@ -410,8 +410,8 @@ def stock_trailers(request):
 								'unknown_trailers' : unknown_trailers_list
 							}
 						)
-	return render_to_response('stock_trailers.html', variables)
-	
+	return render_to_response('stock_trailers.html', locals(), variables)
+
 def stock_machinery(request):
 	blank_machinery_list = list(Vehicle.objects.filter(type="MACHINERY & EQUIPS", showroom="N", make=""))
 	daf_machinery_list = list(Vehicle.objects.filter(type="MACHINERY & EQUIPS", showroom="N", make="Leyland DAF"))
@@ -422,7 +422,7 @@ def stock_machinery(request):
 	foden_machinery_list = list(Vehicle.objects.filter(type="MACHINERY & EQUIPS", showroom="N", make="Foden"))
 	scania_machinery_list = list(Vehicle.objects.filter(type="MACHINERY & EQUIPS", showroom="N", make="SCANIA"))
 	renault_machinery_list = list(Vehicle.objects.filter(type="MACHINERY & EQUIPS", showroom="N", make="RENAULT"))
-	
+
 	acura_machinery_list = list(Vehicle.objects.filter(type="MACHINERY & EQUIPS", showroom="N", make="ACURA"))
 	alfa_machinery_list = list(Vehicle.objects.filter(type="MACHINERY & EQUIPS", showroom="N", make="ALFA"))
 	aston_machinery_list = list(Vehicle.objects.filter(type="MACHINERY & EQUIPS", showroom="N", make="ASTON"))
@@ -438,22 +438,22 @@ def stock_machinery(request):
 	nissan_machinery_list = list(Vehicle.objects.filter(type="MACHINERY & EQUIPS", showroom="N", make="NISSAN"))
 	golf_machinery_list = list(Vehicle.objects.filter(type="MACHINERY & EQUIPS", showroom="N", make="GOLF"))
 	mitsubishi_machinery_list = list(Vehicle.objects.filter(type="MACHINERY & EQUIPS", showroom="N", make="MITSUBISHI"))
-	
-	
+
+
 	variables = RequestContext(request, {
 								'blank_machinery' : blank_machinery_list,
-								'daf_machinery' : daf_machinery_list, 
-								'erf_machinery' : erf_machinery_list, 
-								'iveco_machinery' : iveco_machinery_list, 
-								'merc_machinery' : merc_machinery_list, 
-								'merc_machinery' : merc_machinery_list, 
-								'scania_machinery' : scania_machinery_list, 
-								'volvo_machinery' : volvo_machinery_list, 
-								'renault_machinery' : renault_machinery_list, 
+								'daf_machinery' : daf_machinery_list,
+								'erf_machinery' : erf_machinery_list,
+								'iveco_machinery' : iveco_machinery_list,
+								'merc_machinery' : merc_machinery_list,
+								'merc_machinery' : merc_machinery_list,
+								'scania_machinery' : scania_machinery_list,
+								'volvo_machinery' : volvo_machinery_list,
+								'renault_machinery' : renault_machinery_list,
 								'foden_machinery' : foden_machinery_list,
 								'nissan_machinery' : nissan_machinery_list,
 								'golf_machinery' : golf_machinery_list,
-								'mitsubishi_machinery' : mitsubishi_machinery_list,								
+								'mitsubishi_machinery' : mitsubishi_machinery_list,
 								'acura_machinery' : acura_machinery_list,
 								'alfa_machinery' : alfa_machinery_list,
 								'aston_machinery' : aston_machinery_list,
@@ -468,4 +468,4 @@ def stock_machinery(request):
 								'unknown_machinery' : unknown_machinery_list
 							}
 						)
-	return render_to_response('stock_machinery.html', variables)
+	return render_to_response('stock_machinery.html', locals(), variables)
