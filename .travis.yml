@@ -1,0 +1,13 @@
+sudo: required
+
+services:
+  - docker
+
+before_script:
+  - docker-compose build
+
+script:
+ - docker run techmiyacomercials_app python manage.py test
+
+after_script:
+  - docker-compose kill
