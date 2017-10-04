@@ -7,7 +7,7 @@ before_script:
   - docker-compose build
 
 script:
- - docker run techmiyacomercials_app python manage.py test
+ - docker run techmiyacommercials_app python manage.py test
 
 after_script:
   - docker-compose kill
