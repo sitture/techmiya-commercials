@@ -1,5 +1,9 @@
 # techmiya-commercials
 
+[![Build Status](https://travis-ci.org/sitture/techmiya-commercials.svg?branch=master&style=flat-square)](https://travis-ci.org/sitture/techmiya-commercials) [![Requirements Status](https://requires.io/github/sitture/techmiya-commercials/requirements.svg?branch=master)](https://requires.io/github/sitture/techmiya-commercials/requirements/?branch=master)
+
+A Django-based website for http://techmiyacommercials.com
+
 ## How to setup
 
 Follow this guide to setup this project on your local machine.
