@@ -3,10 +3,14 @@ sudo: required
 services:
   - docker
 
+install:
+  - pip install --user flake8
+
 before_script:
   - docker-compose build
 
 script:
+ - flake8 --ignore E101,E113,E116,E126,E128,E131,E202,E203,E251,E261,E262,E265,E293,E302,E303,E305,E401,E402,E501,F401,F402,F403,F405,F811,F999,W191,W291,W293,W391 src
  - docker run techmiyacommercials_app python manage.py test
 
 after_script:
