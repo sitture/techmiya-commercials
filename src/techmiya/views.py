@@ -4,7 +4,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.template import RequestContext, Context, loader
-from django.shortcuts import render_to_response
+from django.shortcuts import render, render_to_response
 #from babylon.forms import *
 
 from .models import *
@@ -238,7 +238,7 @@ def stock_showroomAll(request):
     veh_list = list(Vehicle.objects.filter(showroom="Y"))
     #if not props_list:
         #raise Http404
-    return render_to_response('stock_showroomAll.html', locals(), {'vehs': veh_list})
+    return render(request, 'stock_showroomAll.html', {'vehs': veh_list})
 
 def stock_showroom_search(request):
 
@@ -251,7 +251,7 @@ def stock_showroom_search(request):
 	else:
 		veh_list = list(Vehicle.objects.filter(showroom="Y", type=veh_type))
 
-	return render_to_response('stock_showroomAll.html', locals(), context_instance=RequestContext(request, {"vehs": veh_list}))
+	return render(request, 'stock_showroomAll.html', {"vehs": veh_list})
 
 def stock_showroom(request):
 	blank_showroom_list = list(Vehicle.objects.filter(showroom="N", make=""))
