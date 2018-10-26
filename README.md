@@ -39,3 +39,75 @@ Follow this guide to setup this project on your local machine.
 
 [virtualenv]: https://virtualenv.pypa.io/
 [python]: https://www.python.org/downloads/release/python-2713/
+
+## Production Configuration with Docker
+
+### Prerequisites
+
+[Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+[Docker Compose](https://docs.docker.com/compose/install/)
+
+### Codebase dependent deployment with docker
+
+```bash
+git clone https://github.com/sitture/techmiya-commercials.git
+
+cd techmiya-commercials/
+
+docker-compose up -d
+```
+
+### Codebase Independent Deployment with docker images
+
+Create docker Image of the application
+
+```bash
+git clone https://github.com/sitture/techmiya-commercials.git
+
+cd techmiya-commercials/
+
+docker build -t techmiya-commercials .
+
+```
+
+Check the images created
+
+```bash
+docker images
+```
+
+Create `docker-compose.yml` for deployment with docker images
+
+```bash
+version: "2.1"
+services:
+
+  db:
+    image: mysql/mysql-server:5.7
+    container_name: techmiya-db
+    env_file:
+      - ./.env
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  app:
+    image: techmiya-commercials
+    container_name: techmiya-commercials
+    env_file:
+      - ./.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+```
+
+Run the app
+
+```bash
+cd techmiya-commercials/
+docker-compose up -d
+```
