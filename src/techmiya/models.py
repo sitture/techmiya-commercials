@@ -47,7 +47,7 @@ class Vehicle(models.Model):
 	type = models.CharField('Type of Vehicle', max_length=50, choices = TYPE_CHOICES )
 	make = models.CharField('Make', max_length=30, choices = MAKE_CHOICES, blank=True )
 	model = models.CharField('Model', max_length=100)
-	year = models.IntegerField("Year (E.g. 1990)", max_length=4, blank=True, null=True)
+	year = models.IntegerField("Year (E.g. 1990)", blank=True, null=True)
 	desc = models.TextField("Description", max_length=400)
 	
 	SHOWROOM_CHOICES = (
@@ -55,14 +55,14 @@ class Vehicle(models.Model):
 		("N", "No")
 	)
 	
-	showroom = models.CharField('In Zambia\'s Showroom', choices = SHOWROOM_CHOICES, default="N", max_length="1", blank=True)
+	showroom = models.CharField('In Zambia\'s Showroom', choices = SHOWROOM_CHOICES, default="N", max_length=1, blank=True)
 	
 	STATUS_CHOICES = (
 		("A", "Available"),
 		("S", "SOLD")
 	)
 	
-	status = models.CharField('Status', choices = STATUS_CHOICES, default="A", max_length="1", blank=True)
+	status = models.CharField('Status', choices = STATUS_CHOICES, default="A", max_length=1, blank=True)
 	#short_desc = models.CharField("Long Description", max_length=400)
 	date_added = models.DateField("Date Added")
 	
@@ -117,15 +117,15 @@ class ContactDetail(models.Model):
 		('Malawi', 'Malawi')
 	)
 	
-	location = models.CharField('Location', max_length="50", choices = LOCATION_CHOICES)
+	location = models.CharField('Location', max_length=50, choices = LOCATION_CHOICES)
 	
 	address = models.CharField('Address (Optional)', max_length=300, blank=True)
 	city = models.CharField('City/Town', max_length=300, blank=True)
 	postcode = models.CharField('PostCode (Optional)', max_length=10, blank=True)
 	
 	
-	telephone = models.CharField('Phone', max_length="20", blank=True)
-	email = models.CharField('Email', max_length="100")
+	telephone = models.CharField('Phone', max_length=20, blank=True)
+	email = models.CharField('Email', max_length=100)
 	
 	def __str__(self):
 		return "%s. %s\'s Contact Details - %s" % (self.title, self.full_name, self.location)

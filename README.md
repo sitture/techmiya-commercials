@@ -1,5 +1,9 @@
 # techmiya-commercials
 
+[![Build Status](https://travis-ci.org/sitture/techmiya-commercials.svg?branch=master&style=flat-square)](https://travis-ci.org/sitture/techmiya-commercials) [![Requirements Status](https://requires.io/github/sitture/techmiya-commercials/requirements.svg?branch=master)](https://requires.io/github/sitture/techmiya-commercials/requirements/?branch=master)
+
+A Django-based website for http://techmiyacommercials.com
+
 ## How to setup
 
 Follow this guide to setup this project on your local machine.
@@ -13,8 +17,8 @@ Follow this guide to setup this project on your local machine.
 3. Create a python virtual environment and install python and django related dependencies.
 
     ```shell
-    cd website
-    virtualenv -p python venv # create virtual env
+    cd techmiya-commercials
+    virtualenv venv # create virtual env
     source venv/bin/activate  # run this command everytime before starting on the project
     pip install -r requirements/dev.txt
     ```

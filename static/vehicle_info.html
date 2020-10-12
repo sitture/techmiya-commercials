@@ -41,15 +41,15 @@
 				<tr>
 					<td valign="top" width="200px">
 						<div align="center">
-							<a href="javascript:changeImage('/site_media/{{ v.image }}')" ><img src="/site_media/{{ v.image }}" width="190" height="120"  border="0"/></a><br />
+							<a href="javascript:changeImage('/static/{{ v.image }}')" ><img src="/static/{{ v.image }}" width="190" height="120"  border="0"/></a><br />
 							{% for item in pics %}
-								<a href="javascript:changeImage('/site_media/{{ item.image }}')" ><img src="/site_media/{{ item.image }}" width="190" height="120"  border="0"/></a><br />
+								<a href="javascript:changeImage('/static/{{ item.image }}')" ><img src="/static/{{ item.image }}" width="190" height="120"  border="0"/></a><br />
 							{% endfor %}
 						</div>
 					</td>
 					<td valign="top" width="610px">				
 						<div align="center">
-							<img name="mainimage" src="/site_media/{{ v.image }}" width="600" height="400" border="0"><br/>
+							<img name="mainimage" src="/static/{{ v.image }}" width="600" height="400" border="0"><br/>
 						</div>
 					</td>
 				</tr>
